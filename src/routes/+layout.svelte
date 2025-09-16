@@ -1,6 +1,7 @@
 <script lang="ts">
     import favicon from "$lib/assets/favicon.svg";
     import "../app.css";
+    import Navbar from "$lib/components/Navbar.svelte";
     import { page } from "$app/state";
     import { locales, localizeHref } from "$lib/i18n/runtime";
 
@@ -13,7 +14,11 @@
     <link rel="icon" href={favicon} />
 </svelte:head>
 
-{@render children?.()}
+<Navbar />
+
+<div class="mt-nav">
+    {@render children?.()}
+</div>
 
 <div style="display:none">
     {#each locales as locale}

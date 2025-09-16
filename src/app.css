@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme {
+    --spacing-nav: calc(16 * var(--spacing));
+    --spacing-page: calc(100vh - var(--spacing-nav));
+}
