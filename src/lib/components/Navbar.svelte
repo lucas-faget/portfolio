@@ -9,9 +9,9 @@
     ];
 </script>
 
-<nav class="fixed inset-0 h-nav flex justify-center items-center gap-8">
+<nav class="h-nav fixed inset-0 flex items-center justify-center gap-8">
     {#each links as link}
-        <a href={link.href} use:underline class="text-lg font-semibold uppercase tracking-wide text-black">
+        <a href={link.href} use:underline class="text-lg font-semibold tracking-wide text-black uppercase">
             {link.name}
         </a>
     {/each}
