@@ -28,17 +28,17 @@
                                     class:top-2={!item.icon}
                                 ></div>
                             {/if}
-                            <h3 class="text-lg font-semibold" class:pt-1={item.icon}>
+                            <h3 class="text-xl font-semibold" class:pt-1={item.icon}>
                                 {item.title}
                             </h3>
                             {#each item.meta ?? [] as meta}
-                                <div class="text-foreground-alt flex items-center gap-2 text-sm">
+                                <div class="text-muted-foreground flex items-center gap-2 text-base">
                                     <iconify-icon icon={meta.icon}></iconify-icon>
                                     <span>{meta.label}</span>
                                 </div>
                             {/each}
                             {#if item.description}
-                                <p class="text-foreground-alt text-sm">
+                                <p class="text-muted-foreground text-base">
                                     {item.description}
                                 </p>
                             {/if}
