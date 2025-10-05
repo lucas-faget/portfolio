@@ -78,6 +78,11 @@
         @apply border-border;
     }
 
+    html {
+        scroll-padding-top: var(--spacing-nav);
+        scroll-behavior: smooth;
+    }
+
     body {
         @apply bg-background text-foreground font-quicksand;
     }
