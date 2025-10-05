@@ -9,12 +9,12 @@
     let nav: NavItem[] = getContext("nav");
 </script>
 
-<aside class="min-h-page relative w-100 border-r p-6">
+<aside class="sm:min-h-page relative w-full border-b p-6 sm:w-60 sm:border-r md:w-80 lg:w-100">
     {#if children}
         {@render children()}
     {:else if nav && nav.length > 0}
         <ul
-            class="sticky top-22 left-4 m-0 flex list-none flex-col justify-center gap-2 p-0 text-2xl tracking-wide uppercase"
+            class="sticky top-22 left-4 m-0 flex list-none flex-row flex-wrap gap-4 p-0 text-2xl tracking-wide uppercase sm:flex-col sm:gap-2"
         >
             {#each nav as item}
                 <li class:text-muted-foreground={item.id !== id}>

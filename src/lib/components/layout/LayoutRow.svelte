@@ -16,6 +16,6 @@
     }
 </script>
 
-<div {id} class="min-h-page group flex border-b">
+<div {id} class="min-h-page flex flex-col border-b sm:flex-row">
     {@render children?.()}
 </div>

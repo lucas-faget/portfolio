@@ -4,6 +4,6 @@
     let { children }: { children: Snippet } = $props();
 </script>
 
-<section class="min-h-page flex flex-1 items-center p-6">
+<section class="sm:min-h-page flex flex-1 items-center p-6">
     {@render children?.()}
 </section>
