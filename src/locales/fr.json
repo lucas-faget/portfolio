@@ -1,4 +1,51 @@
 {
     "$schema": "https://inlang.com/schema/inlang-message-format",
-    "example_message": "Bienvenue {username}"
+
+    "nav_home": "Accueil",
+    "nav_about": "A propos",
+    "nav_work": "Projets",
+    "nav_contact": "Contact",
+
+    "about_layout_bio": "Bio",
+    "about_layout_xp": "Expérience",
+    "about_layout_edu": "Formation",
+
+    "bio_1": "Je suis Lucas Faget, développeur web titulaire d'un DUT en Informatique et d'une Licence Professionnelle en Développement Web, réalisée en alternance chez Simpliciti.",
+    "bio_2": "Depuis octobre 2024, j'occupe un poste de développeur web chez AGIRIS C2J (Groupe ISAGRI), basé à Toulouse, où j'utilise principalement des technologies telles que PHP et JavaScript (notamment Laravel et Svelte).",
+
+    "xp_1_title": "Développeur web",
+    "xp_1_period": "oct. 2024 - présent",
+    "xp_1_company": "AGIRIS C2J (Groupe ISAGRI)",
+    "xp_1_location": "Toulouse, France",
+    "xp_1_description": "",
+
+    "xp_2_title": "Développeur web en alternance",
+    "xp_2_period": "juil. 2022 - sept. 2023",
+    "xp_2_company": "Simpliciti",
+    "xp_2_location": "Bordeaux, France",
+    "xp_2_description": "",
+
+    "xp_3_title": "Stage en développement web",
+    "xp_3_period": "juin. 2021 - août. 2021",
+    "xp_3_company": "Audit Action+",
+    "xp_3_location": "Toulouse, France",
+    "xp_3_description": "",
+
+    "edu_1_title": "Licence professionnelle en développement web (DAWIN)",
+    "edu_1_period": "sept. 2022 - sept. 2023",
+    "edu_1_school": "IUT de Bordeaux",
+    "edu_1_location": "Bordeaux, France",
+    "edu_1_description": "",
+
+    "edu_2_title": "DUT en Informatique",
+    "edu_2_period": "sept. 2020 - sept. 2021",
+    "edu_2_school": "IUT Paul Sabatier",
+    "edu_2_location": "Toulouse, France",
+    "edu_2_description": "",
+
+    "edu_3_title": "Licence de physique",
+    "edu_3_period": "2016 - 2019",
+    "edu_3_school": "Université de Pau",
+    "edu_3_location": "Pau, France",
+    "edu_3_description": ""
 }
