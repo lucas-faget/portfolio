@@ -3,13 +3,13 @@
     import type { NavItem } from "$lib/types/NavItem";
     import { underline } from "$lib/actions/actions";
 
-    let { children = null }: { children: Snippet | null } = $props();
+    let { children = null }: { children?: Snippet | null } = $props();
 
     let id: string = getContext("id");
     let nav: NavItem[] = getContext("nav");
 </script>
 
-<aside class="sm:min-h-page relative w-full border-b p-6 sm:w-60 sm:border-r md:w-80 lg:w-100">
+<aside class="sm:min-h-page relative w-full p-6 max-sm:border-b sm:w-60 sm:border-r md:w-80 lg:w-100">
     {#if children}
         {@render children()}
     {:else if nav && nav.length > 0}

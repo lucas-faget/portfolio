@@ -8,12 +8,13 @@
 
 <div class="max-w-(--breakpoint-sm)">
     <div class="relative">
-        {#each items as item}
+        {#each items as item, index}
             <div class="group relative">
                 <div class="flex items-start">
                     <div class={hasSomeIcon ? "ml-4.5" : "ml-1.5"}>
                         <div
-                            class="border-muted-foreground relative -ml-px space-y-2 border-l-2 pb-6 pl-8 group-last:pb-0"
+                            class="border-muted-foreground relative -ml-px space-y-2 border-l-2 pl-8"
+                            class:pb-6={index !== items.length - 1}
                         >
                             {#if item.icon}
                                 <div

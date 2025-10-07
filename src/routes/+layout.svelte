@@ -1,13 +1,15 @@
 <script lang="ts">
     import favicon from "$lib/assets/favicon.svg";
     import "../app.css";
-    import Navbar from "$lib/components/Navbar.svelte";
+    import "iconify-icon";
+    import type { Snippet } from "svelte";
     import { page } from "$app/state";
     import { locales, localizeHref } from "$lib/i18n/runtime";
+    import Navbar from "$lib/components/Navbar.svelte";
 
     export const prerender = true;
 
-    let { children } = $props();
+    let { children }: { children: Snippet } = $props();
 </script>
 
 <svelte:head>
