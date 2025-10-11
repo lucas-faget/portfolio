@@ -27,7 +27,7 @@
 
 <button
     onclick={toggleLang}
-    class="border-input hover:bg-muted inline-flex size-10 shrink-0 items-center justify-center rounded-lg bg-inherit"
+    class="hover:bg-muted inline-flex size-10 shrink-0 items-center justify-center rounded-lg bg-inherit"
 >
     {#if isFr}
         <iconify-icon icon="circle-flags:fr" class="text-2xl"></iconify-icon>

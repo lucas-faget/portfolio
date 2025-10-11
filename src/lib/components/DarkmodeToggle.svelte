@@ -28,7 +28,7 @@
 
 <button
     onclick={toggleTheme}
-    class="border-input hover:bg-muted inline-flex size-10 shrink-0 items-center justify-center rounded-lg bg-inherit"
+    class="hover:bg-muted inline-flex size-10 shrink-0 items-center justify-center rounded-lg bg-inherit"
 >
     {#if isDark}
         <iconify-icon icon="ph:moon" class="text-2xl"></iconify-icon>
