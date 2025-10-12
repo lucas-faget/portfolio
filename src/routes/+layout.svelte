@@ -7,8 +7,6 @@
     import { locales, localizeHref } from "$lib/i18n/runtime";
     import Navbar from "$lib/components/Navbar.svelte";
 
-    export const prerender = true;
-
     let { children }: { children: Snippet } = $props();
 </script>
 
