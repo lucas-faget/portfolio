@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { PageProps } from "./$types";
     import type { ContactForm } from "$lib/types/ContactForm.js";
+    import { m } from "$lib/i18n/messages";
     import { enhance } from "$app/forms";
     import Input from "$lib/components/Input.svelte";
 
@@ -18,7 +19,7 @@
 
 <div class="min-h-page flex items-center justify-center">
     <div class="w-full max-w-xl p-4">
-        <h3 class="mb-4 border-b pb-2 text-2xl tracking-wide">Envoyez-moi un message</h3>
+        <h3 class="mb-4 border-b pb-2 text-2xl tracking-wide">{m.contact_form_title()}</h3>
 
         <form
             method="POST"
@@ -39,24 +40,44 @@
         >
             <div class="flex flex-col gap-6 sm:flex-row">
                 <label for="firstname" class="flex flex-1 flex-col gap-1.5">
-                    <span class="font-medium">Prénom</span>
-                    <Input type="text" id="firstname" bind:value={data.firstname} placeholder="Votre prénom" />
+                    <span class="font-medium">{m.contact_form_firstname_label()}</span>
+                    <Input
+                        type="text"
+                        id="firstname"
+                        bind:value={data.firstname}
+                        placeholder={m.contact_form_firstname_placeholder()}
+                    />
                 </label>
 
                 <label for="lastname" class="flex flex-1 flex-col gap-1.5">
-                    <span class="font-medium">Nom</span>
-                    <Input type="text" id="lastname" bind:value={data.lastname} placeholder="Votre nom" />
+                    <span class="font-medium">{m.contact_form_lastname_label()}</span>
+                    <Input
+                        type="text"
+                        id="lastname"
+                        bind:value={data.lastname}
+                        placeholder={m.contact_form_lastname_placeholder()}
+                    />
                 </label>
             </div>
 
             <label for="email" class="flex flex-col gap-1.5">
-                <span class="font-medium">Email</span>
-                <Input type="email" id="email" bind:value={data.email} placeholder="Votre email" />
+                <span class="font-medium">{m.contact_form_email_label()}</span>
+                <Input
+                    type="email"
+                    id="email"
+                    bind:value={data.email}
+                    placeholder={m.contact_form_email_placeholder()}
+                />
             </label>
 
             <label for="message" class="flex flex-col gap-1.5">
-                <span class="font-medium">Message</span>
-                <Input type="textarea" id="message" bind:value={data.message} placeholder="Votre message" />
+                <span class="font-medium">{m.contact_form_msg_label()}</span>
+                <Input
+                    type="textarea"
+                    id="message"
+                    bind:value={data.message}
+                    placeholder={m.contact_form_msg_placeholder()}
+                />
             </label>
 
             <div class="flex justify-end">
@@ -70,7 +91,7 @@
                     {:else}
                         <iconify-icon icon="lucide:send" class="text-lg"></iconify-icon>
                     {/if}
-                    Envoyer
+                    {m.contact_form_button()}
                 </button>
             </div>
         </form>

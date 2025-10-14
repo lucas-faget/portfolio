@@ -47,5 +47,20 @@
     "edu_3_period": "2016 - 2019",
     "edu_3_school": "University of Pau",
     "edu_3_location": "Pau, France",
-    "edu_3_description": ""
+    "edu_3_description": "",
+
+    "contact_form_title": "Send me a message",
+    "contact_form_button": "Send",
+
+    "contact_form_firstname_label": "First name",
+    "contact_form_firstname_placeholder": "Your first name",
+
+    "contact_form_lastname_label": "Last name",
+    "contact_form_lastname_placeholder": "Your last name",
+
+    "contact_form_email_label": "Email",
+    "contact_form_email_placeholder": "Your email address",
+
+    "contact_form_msg_label": "Message",
+    "contact_form_msg_placeholder": "Enter your message here..."
 }
