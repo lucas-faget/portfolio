@@ -1,11 +1,11 @@
 <script lang="ts">
-    import type { PageProps } from "./$types";
+    import emailjs from "@emailjs/browser";
+    import { PUBLIC_EMAILJS_KEY } from "$env/static/public";
+    import { PUBLIC_SERVICE_ID } from "$env/static/public";
+    import { PUBLIC_TEMPLATE_ID } from "$env/static/public";
     import type { ContactForm } from "$lib/types/ContactForm.js";
     import { m } from "$lib/i18n/messages";
-    import { enhance } from "$app/forms";
     import Input from "$lib/components/Input.svelte";
-
-    let { form }: PageProps = $props();
 
     let data: ContactForm = $state({
         firstname: "",
@@ -14,30 +14,42 @@
         message: "",
     });
 
+    let name: string = $derived(`${data.firstname} ${data.lastname}`);
+
     let isSending: boolean = $state(false);
+
+    emailjs.init({
+        publicKey: PUBLIC_EMAILJS_KEY,
+    });
+
+    async function sendMail(e: Event): Promise<void> {
+        e.preventDefault();
+        isSending = true;
+
+        var templateParams = {
+            name,
+            email: data.email,
+            message: data.message,
+        };
+
+        emailjs.send(PUBLIC_SERVICE_ID, PUBLIC_TEMPLATE_ID, templateParams).then(
+            (response) => {
+                isSending = false;
+                alert("Merci, le message a bien été transmis !");
+            },
+            (error) => {
+                isSending = false;
+                alert("Désolé, le message n'a pas pu être transmis. Veuillez réessayer plus tard.");
+            },
+        );
+    }
 </script>
 
 <div class="min-h-page flex items-center justify-center">
     <div class="w-full max-w-xl p-4">
         <h3 class="mb-4 border-b pb-2 text-2xl tracking-wide">{m.contact_form_title()}</h3>
 
-        <form
-            method="POST"
-            action="?/send"
-            use:enhance={({ formElement, formData, action, cancel, submitter }) => {
-                if (isSending) {
-                    cancel();
-                }
-
-                isSending = true;
-
-                return async ({ result, update }) => {
-                    isSending = false;
-                    update();
-                };
-            }}
-            class="space-y-4"
-        >
+        <form onsubmit={sendMail} class="space-y-4">
             <div class="flex flex-col gap-6 sm:flex-row">
                 <label for="firstname" class="flex flex-1 flex-col gap-1.5">
                     <span class="font-medium">{m.contact_form_firstname_label()}</span>
