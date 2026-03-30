@@ -1,5 +1,36 @@
 ---
 import "../styles/global.css";
+import CardNav from "@/components/CardNav";
+
+const isNavDark: boolean = false;
+
+const items = [
+    {
+        label: "About",
+        bgColor: "var(--chart-5)",
+        textColor: "#fff",
+        links: [
+            { label: "Experience", ariaLabel: "Work Experience", href: "#" },
+            { label: "Education", ariaLabel: "Education", href: "#" },
+        ],
+    },
+    {
+        label: "Projects",
+        bgColor: "var(--chart-4)",
+        textColor: "#fff",
+        links: [{ label: "Featured", ariaLabel: "Featured Projects", href: "#" }],
+    },
+    {
+        label: "Contact",
+        bgColor: "var(--chart-3)",
+        textColor: "#fff",
+        links: [
+            { label: "Email", ariaLabel: "Email", href: "#" },
+            { label: "LinkedIn", ariaLabel: "LinkedIn", href: "#" },
+            { label: "Github", ariaLabel: "Github", href: "#" },
+        ],
+    },
+];
 ---
 
 <!doctype html>
@@ -13,6 +44,19 @@ import "../styles/global.css";
         <title>Lucas Faget</title>
     </head>
     <body class="dark">
+        <CardNav
+            client:load
+            className={isNavDark ? "dark" : "light"}
+            logo={isNavDark ? "/assets/astro-logo-light.svg" : "/assets/astro-logo-dark.svg"}
+            logoAlt="Astro Logo"
+            items={items}
+            baseColor="var(--card)"
+            menuColor="var(--card-foreground)"
+            buttonBgColor="var(--card-foreground)"
+            buttonTextColor="var(--card)"
+            ease="power3.out"
+        />
+
         <slot />
     </body>
 </html>
